@@ -1,3 +1,20 @@
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js";
+import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-analytics.js";
+
+const firebaseConfig = {
+    apiKey: "AIzaSyCZxYerphgCyRbUQ6QbW_6KGA466siEfO4",
+    authDomain: "product-inten.firebaseapp.com",
+    projectId: "product-inten",
+    storageBucket: "product-inten.firebasestorage.app",
+    messagingSenderId: "643847893346",
+    appId: "1:643847893346:web:2071c07f2f047e00d87c3b",
+    measurementId: "G-Q5B4NZZVPG"
+};
+
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
+const analytics = getAnalytics(app);
+
 document.addEventListener('DOMContentLoaded', () => {
     // Navigation
     const navLinks = document.querySelectorAll('.nav-links li');
@@ -40,7 +57,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // Task Logic
-    window.toggleTask = function(btn) {
+    window.toggleTask = function (btn) {
         if (btn.innerText === 'Start') {
             btn.innerText = 'Complete';
             btn.style.backgroundColor = '#10B981'; // Green

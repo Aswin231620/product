@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,6 +12,7 @@
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
+
 <body>
     <div class="app-container">
         <!-- Sidebar Navigation (Simplified) -->
@@ -25,8 +27,8 @@
                     <span>Start</span>
                 </li>
                 <li data-target="screen-2">
-                   <i class="fa-solid fa-map"></i>
-                   <span>Roadmap</span>
+                    <i class="fa-solid fa-map"></i>
+                    <span>Roadmap</span>
                 </li>
                 <li data-target="screen-3">
                     <i class="fa-solid fa-list-check"></i>
@@ -41,14 +43,14 @@
 
         <!-- Main Content Area -->
         <main class="content">
-            
+
             <!-- Screen 1: Diagnostic Onboarding -->
             <section id="screen-1" class="screen active">
                 <header class="screen-header">
                     <h1>Start Your IELTS Journey</h1>
                     <p>Let's personalize your path to success.</p>
                 </header>
-                
+
                 <div class="card onboarding-card">
                     <div class="form-group">
                         <label for="target-band">Target Band Score</label>
@@ -71,19 +73,27 @@
                         <div class="heatmap-grid">
                             <div class="heatmap-item level-high">
                                 <span>Reading</span>
-                                <div class="bar"><div style="width: 85%"></div></div>
+                                <div class="bar">
+                                    <div style="width: 85%"></div>
+                                </div>
                             </div>
                             <div class="heatmap-item level-med">
                                 <span>Listening</span>
-                                <div class="bar"><div style="width: 65%"></div></div>
+                                <div class="bar">
+                                    <div style="width: 65%"></div>
+                                </div>
                             </div>
                             <div class="heatmap-item level-low">
                                 <span>Writing</span>
-                                <div class="bar"><div style="width: 45%"></div></div>
+                                <div class="bar">
+                                    <div style="width: 45%"></div>
+                                </div>
                             </div>
                             <div class="heatmap-item level-med">
                                 <span>Speaking</span>
-                                <div class="bar"><div style="width: 60%"></div></div>
+                                <div class="bar">
+                                    <div style="width: 60%"></div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -113,7 +123,7 @@
                             <span class="progress-text">60% Complete</span>
                         </div>
                     </div>
-                    
+
                     <div class="week-card locked">
                         <div class="week-header">
                             <h3>Week 2</h3>
@@ -143,7 +153,8 @@
                     <div class="widget task-preview">
                         <h3>Today's Focus</h3>
                         <p>Complete 3 personalized tasks to maintain your streak.</p>
-                        <button class="btn-secondary" onclick="navigateTo('screen-3')">Go to Daily Tasks <i class="fa-solid fa-arrow-right"></i></button>
+                        <button class="btn-secondary" onclick="navigateTo('screen-3')">Go to Daily Tasks <i
+                                class="fa-solid fa-arrow-right"></i></button>
                     </div>
                 </div>
             </section>
@@ -156,7 +167,7 @@
                 </header>
 
                 <div class="streak-meter-container">
-                     <div class="streak-info">
+                    <div class="streak-info">
                         <span>Current Streak</span>
                         <div class="fire-icons">
                             <i class="fa-solid fa-fire active"></i>
@@ -165,8 +176,8 @@
                             <i class="fa-solid fa-fire active"></i>
                             <i class="fa-solid fa-fire active"></i>
                         </div>
-                     </div>
-                     <button class="btn-outline" disabled>Use Free Pass (Used)</button>
+                    </div>
+                    <button class="btn-outline" disabled>Use Free Pass (Used)</button>
                 </div>
 
                 <div class="tasks-list">
@@ -206,7 +217,7 @@
                         <button class="btn-task" onclick="toggleTask(this)">Start</button>
                     </div>
                 </div>
-                
+
                 <div class="action-footer">
                     <button class="btn-primary" onclick="navigateTo('screen-4')">View Momentum Dashboard</button>
                 </div>
@@ -241,17 +252,12 @@
                         <h3>Consistency Score</h3>
                         <div class="rating-circle">
                             <svg viewBox="0 0 36 36" class="circular-chart blue">
-                                <path class="circle-bg"
-                                  d="M18 2.0845
+                                <path class="circle-bg" d="M18 2.0845
                                     a 15.9155 15.9155 0 0 1 0 31.831
-                                    a 15.9155 15.9155 0 0 1 0 -31.831"
-                                />
-                                <path class="circle"
-                                  stroke-dasharray="85, 100"
-                                  d="M18 2.0845
+                                    a 15.9155 15.9155 0 0 1 0 -31.831" />
+                                <path class="circle" stroke-dasharray="85, 100" d="M18 2.0845
                                     a 15.9155 15.9155 0 0 1 0 31.831
-                                    a 15.9155 15.9155 0 0 1 0 -31.831"
-                                />
+                                    a 15.9155 15.9155 0 0 1 0 -31.831" />
                                 <text x="18" y="20.35" class="percentage">85%</text>
                             </svg>
                         </div>
@@ -277,6 +283,7 @@
         </main>
     </div>
 
-    <script src="script.js"></script>
+    <script type="module" src="script.js"></script>
 </body>
+
 </html>
