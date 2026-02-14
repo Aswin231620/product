@@ -1,1 +1,1 @@
-file:///D:/project%20needs/intern.pdf
+https://detection-bc21d.web.app/
