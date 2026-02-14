@@ -1,0 +1,21 @@
+{
+  "name": "ielts-momentum-engine",
+  "version": "1.0.0",
+  "description": "IELTS Momentum Engine - A student engagement dashboard for IELTS preparation",
+  "main": "index.html",
+  "scripts": {
+    "start": "serve",
+    "dev": "serve"
+  },
+  "keywords": [
+    "ielts",
+    "dashboard",
+    "education",
+    "engagement"
+  ],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "serve": "^14.2.1"
+  }
+}
