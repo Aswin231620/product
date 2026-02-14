@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IELTS Momentum Engine</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Sidebar Navigation (Simplified) -->
+        <nav class="sidebar">
+            <div class="logo">
+                <i class="fa-solid fa-graduation-cap"></i>
+                <span>IELTS Momentum</span>
+            </div>
+            <ul class="nav-links">
+                <li class="active" data-target="screen-1">
+                    <i class="fa-solid fa-flag-checkered"></i>
+                    <span>Start</span>
+                </li>
+                <li data-target="screen-2">
+                   <i class="fa-solid fa-map"></i>
+                   <span>Roadmap</span>
+                </li>
+                <li data-target="screen-3">
+                    <i class="fa-solid fa-list-check"></i>
+                    <span>Daily Tasks</span>
+                </li>
+                <li data-target="screen-4">
+                    <i class="fa-solid fa-chart-line"></i>
+                    <span>Progress</span>
+                </li>
+            </ul>
+        </nav>
+
+        <!-- Main Content Area -->
+        <main class="content">
+            
+            <!-- Screen 1: Diagnostic Onboarding -->
+            <section id="screen-1" class="screen active">
+                <header class="screen-header">
+                    <h1>Start Your IELTS Journey</h1>
+                    <p>Let's personalize your path to success.</p>
+                </header>
+                
+                <div class="card onboarding-card">
+                    <div class="form-group">
+                        <label for="target-band">Target Band Score</label>
+                        <select id="target-band">
+                            <option value="6.5">Band 6.5</option>
+                            <option value="7.0">Band 7.0</option>
+                            <option value="7.5">Band 7.5</option>
+                            <option value="8.0">Band 8.0</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="exam-date">Exam Date</label>
+                        <input type="date" id="exam-date">
+                    </div>
+
+                    <div class="heatmap-section">
+                        <h3>Skill Heatmap Preview</h3>
+                        <p class="subtext">Based on your initial diagnostic (simulated)</p>
+                        <div class="heatmap-grid">
+                            <div class="heatmap-item level-high">
+                                <span>Reading</span>
+                                <div class="bar"><div style="width: 85%"></div></div>
+                            </div>
+                            <div class="heatmap-item level-med">
+                                <span>Listening</span>
+                                <div class="bar"><div style="width: 65%"></div></div>
+                            </div>
+                            <div class="heatmap-item level-low">
+                                <span>Writing</span>
+                                <div class="bar"><div style="width: 45%"></div></div>
+                            </div>
+                            <div class="heatmap-item level-med">
+                                <span>Speaking</span>
+                                <div class="bar"><div style="width: 60%"></div></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <button class="btn-primary cta-btn" onclick="navigateTo('screen-2')">Generate My Roadmap</button>
+                </div>
+            </section>
+
+            <!-- Screen 2: Personalized Roadmap Dashboard -->
+            <section id="screen-2" class="screen">
+                <header class="screen-header">
+                    <h1>Your 4-Week Plan</h1>
+                    <div class="streak-badge">
+                        <i class="fa-solid fa-fire"></i> 5 Day Streak
+                    </div>
+                </header>
+
+                <div class="weekly-cards-container">
+                    <div class="week-card current">
+                        <div class="week-header">
+                            <h3>Week 1</h3>
+                            <span class="status">In Progress</span>
+                        </div>
+                        <p class="week-title">Foundation</p>
+                        <div class="progress-container">
+                            <div class="progress-bar" style="width: 60%"></div>
+                            <span class="progress-text">60% Complete</span>
+                        </div>
+                    </div>
+                    
+                    <div class="week-card locked">
+                        <div class="week-header">
+                            <h3>Week 2</h3>
+                            <i class="fa-solid fa-lock"></i>
+                        </div>
+                        <p class="week-title">Skill Strengthening</p>
+                    </div>
+
+                    <div class="week-card locked">
+                        <div class="week-header">
+                            <h3>Week 3</h3>
+                            <i class="fa-solid fa-lock"></i>
+                        </div>
+                        <p class="week-title">Performance Practice</p>
+                    </div>
+
+                    <div class="week-card locked">
+                        <div class="week-header">
+                            <h3>Week 4</h3>
+                            <i class="fa-solid fa-lock"></i>
+                        </div>
+                        <p class="week-title">Optimization</p>
+                    </div>
+                </div>
+
+                <div class="dashboard-widgets">
+                    <div class="widget task-preview">
+                        <h3>Today's Focus</h3>
+                        <p>Complete 3 personalized tasks to maintain your streak.</p>
+                        <button class="btn-secondary" onclick="navigateTo('screen-3')">Go to Daily Tasks <i class="fa-solid fa-arrow-right"></i></button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Screen 3: Daily Habit Task Page -->
+            <section id="screen-3" class="screen">
+                <header class="screen-header">
+                    <h1>Today's 3 Tasks</h1>
+                    <span class="time-est"><i class="fa-regular fa-clock"></i> ~45 mins</span>
+                </header>
+
+                <div class="streak-meter-container">
+                     <div class="streak-info">
+                        <span>Current Streak</span>
+                        <div class="fire-icons">
+                            <i class="fa-solid fa-fire active"></i>
+                            <i class="fa-solid fa-fire active"></i>
+                            <i class="fa-solid fa-fire active"></i>
+                            <i class="fa-solid fa-fire active"></i>
+                            <i class="fa-solid fa-fire active"></i>
+                        </div>
+                     </div>
+                     <button class="btn-outline" disabled>Use Free Pass (Used)</button>
+                </div>
+
+                <div class="tasks-list">
+                    <div class="task-card">
+                        <div class="task-icon reading">
+                            <i class="fa-solid fa-book-open"></i>
+                        </div>
+                        <div class="task-details">
+                            <h3>Reading Practice</h3>
+                            <p>Passage 1: Climate Change</p>
+                            <span class="task-time">20 mins</span>
+                        </div>
+                        <button class="btn-task" onclick="toggleTask(this)">Start</button>
+                    </div>
+
+                    <div class="task-card">
+                        <div class="task-icon review">
+                            <i class="fa-solid fa-clipboard-check"></i>
+                        </div>
+                        <div class="task-details">
+                            <h3>Review Mistakes</h3>
+                            <p>Analyze previous mock errors</p>
+                            <span class="task-time">15 mins</span>
+                        </div>
+                        <button class="btn-task" onclick="toggleTask(this)">Start</button>
+                    </div>
+
+                    <div class="task-card">
+                        <div class="task-icon vocab">
+                            <i class="fa-solid fa-font"></i>
+                        </div>
+                        <div class="task-details">
+                            <h3>Vocabulary Sprint</h3>
+                            <p>Learn 10 new Academic words</p>
+                            <span class="task-time">10 mins</span>
+                        </div>
+                        <button class="btn-task" onclick="toggleTask(this)">Start</button>
+                    </div>
+                </div>
+                
+                <div class="action-footer">
+                    <button class="btn-primary" onclick="navigateTo('screen-4')">View Momentum Dashboard</button>
+                </div>
+            </section>
+
+            <!-- Screen 4: Momentum Dashboard -->
+            <section id="screen-4" class="screen">
+                <header class="screen-header">
+                    <h1>Momentum Dashboard</h1>
+                    <p>Track your progress towards Band 7.0+</p>
+                </header>
+
+                <div class="momentum-grid">
+                    <!-- Band Prediction Card -->
+                    <div class="card momentum-card large">
+                        <h3>Band Prediction Progress</h3>
+                        <div class="chart-container">
+                            <canvas id="bandChart"></canvas>
+                        </div>
+                    </div>
+
+                    <!-- Accuracy Trend -->
+                    <div class="card momentum-card large">
+                        <h3>Accuracy Trend</h3>
+                        <div class="chart-container">
+                            <canvas id="accuracyChart"></canvas>
+                        </div>
+                    </div>
+
+                    <!-- Practice Consistency -->
+                    <div class="card momentum-card">
+                        <h3>Consistency Score</h3>
+                        <div class="rating-circle">
+                            <svg viewBox="0 0 36 36" class="circular-chart blue">
+                                <path class="circle-bg"
+                                  d="M18 2.0845
+                                    a 15.9155 15.9155 0 0 1 0 31.831
+                                    a 15.9155 15.9155 0 0 1 0 -31.831"
+                                />
+                                <path class="circle"
+                                  stroke-dasharray="85, 100"
+                                  d="M18 2.0845
+                                    a 15.9155 15.9155 0 0 1 0 31.831
+                                    a 15.9155 15.9155 0 0 1 0 -31.831"
+                                />
+                                <text x="18" y="20.35" class="percentage">85%</text>
+                            </svg>
+                        </div>
+                        <p class="card-caption">Great consistency!</p>
+                    </div>
+
+                    <!-- Readiness Meter -->
+                    <div class="card momentum-card">
+                        <h3>Exam Readiness</h3>
+                        <div class="meter-container">
+                            <div class="meter-bar">
+                                <div class="meter-fill" style="width: 70%"></div>
+                            </div>
+                            <span class="meter-text">70% Ready</span>
+                        </div>
+                        <div class="weekly-unlock">
+                            <i class="fa-solid fa-lock-open"></i>
+                            <span>Weekly Mock Unlocked</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
